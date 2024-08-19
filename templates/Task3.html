@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApp</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding:0;
+            margin:0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .lists{
+            margin-top: 10px;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+        }
+
+        .hline{
+            height:5px;
+            background-color: black;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .vline{
+            position: relative;
+            height: 40px;
+            width:3px;
+            background-color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="lists">
+                <li><a href="/"><h2>Task 1</h2></a></li>
+                <div class="vline"></div>
+                <li><a href="/Task2"><h2>Task 2</h2></a></li>
+                <div class="vline"></div>
+                <li><a href="/Task3"><h2>Task 3</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hline"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Weight</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.Name }}</td>
+                <td>{{ row.Color }}</td>
+                <td>{{ row.Weight }}</td>
+                <td>{{ row.Size }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
