@@ -48,7 +48,7 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: mrityunjay1094-ata3g6a9byc5ekdp.eastus-01.azurewebsites.net
     
     steps:
       - name: Download artifact from build job
