@@ -48,7 +48,7 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: mrityunjay1094-ata3g6a9byc5ekdp.eastus-01.azurewebsites.net
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
       - name: Download artifact from build job
@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'mrityunjay1094'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_364F6161ECA246E3981AF7213BFCB5FA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7A3EE3DA3F3844AB9A182055118080BA }}
